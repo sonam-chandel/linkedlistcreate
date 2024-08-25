@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+void traversal(struct node *ptr)
+{
+    while(ptr!=NULL){
+    printf("elements are:%d\n",ptr->data);
+   ptr=ptr->next;
+    }
+} 
+
+
+
+int main()
+{
+    struct node *first;
+    struct node *second;
+    struct node *third;
+      
+      first=(struct node *)malloc(sizeof(struct node));
+      second=(struct node *)malloc(sizeof(struct node)); 
+       third=(struct node *)malloc(sizeof(struct node));
+      
+    first->data=5;
+    first->next=second;
+     second->data=11;
+      second->next=third;
+       third->data=56;
+     
+      third-> next=NULL;
+      traversal(first);
+      return 0;
+}
